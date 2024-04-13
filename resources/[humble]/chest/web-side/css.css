@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+::-webkit-scrollbar { width: 0px; }
+::-webkit-scrollbar-track { background: rgb(110, 110, 110); border-radius: 0px; }
+::-webkit-scrollbar-thumb { background: rgb(160, 160, 160); border-radius: 0px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(184, 184, 184); }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+:root {
+	font-size: 16px;
+}
+
+@media screen and (max-width: 800px), screen and (max-height: 600px){
+	:root {
+		font-size: 0.3rem;
+	}
+}
+@media screen and (min-width: 800px) and (min-height: 600px){
+	:root {
+		font-size: 0.425rem;
+	}
+}
+@media screen and (min-width: 1000px) and (min-height: 700px){
+	:root {
+		font-size: 0.55rem;
+	}
+}
+@media screen and (min-width: 1100px) and (min-height: 700px){
+	:root {
+		font-size: 0.6rem;
+	}
+}
+@media screen and (min-width: 1300px) and (min-height: 700px) {
+	:root {
+		font-size: 0.7rem;
+	}
+}
+@media screen and (min-width: 1400px) and (min-height: 700px){
+	:root {
+		font-size: 0.75rem;
+	}
+}
+@media screen and (min-width: 1600px) and (min-height: 800px){
+	:root {
+		font-size: 0.8rem;
+	}
+}
+@media screen and (min-width: 1750px) and (min-height: 900px){
+	:root {
+		font-size: 0.9rem;
+	}
+}
+@media screen and (min-width: 1850px) and (min-height: 1000px){
+	:root {
+		font-size: 1rem;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+* {
+	overflow: hidden;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+.inventory {
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.innerInventory {
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.externalLink {
+	position: relative;
+	overflow: visible;
+}
+
+.sections {
+	height: 53.8rem;
+	display: flex;
+}
+
+.invLeft, .invRight {
+	row-gap: 3px;
+	display: grid;
+	column-gap: 3px;
+	overflow-y: scroll;
+	padding-right: 10px;
+	grid-template-columns: repeat(5,8.8rem);
+}
+
+.item {
+	width: 8.7rem;
+	border-radius: 4px;
+	min-height: 8.7rem;
+	display: flex;
+	border-radius: 4px;
+	flex-direction: column;
+	height: 8.7rem;
+	text-shadow: 1px 1px #000;
+	position: relative;
+	border: 1px solid rgba(255, 255, 255, .25);
+    background: rgba(255, 255, 255, .1);
+	overflow: visible;
+}
+
+.populated {
+	background-color: rgba(172, 172, 172, 0.4);
+}
+
+.populated:hover, .hoverControl {
+	opacity: 0.8;
+}
+
+.image-item {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	height: 80px;
+	width: 80px;
+}
+
+.item .top {
+	display: flex;
+	color: #b2aacc;
+	font-size: .70rem;
+	justify-content: space-between;
+}
+
+.itemAmount {
+	color: rgb(255, 255, 255,0.5);
+	font-size: 12px;
+	font-weight: bold;
+	margin: 6px 6px 0 0;
+}
+
+.itemWeight {
+	color: rgb(255, 255, 255,0.5);
+	font-size: 12px;
+	font-weight: bold;
+	margin: 6px 0 0 6px;
+}
+
+.item {
+    border: 1px solid rgba(255, 255, 255, .25);
+    background: rgba(255, 255, 255, .1);
+    display: flex;
+    color: #ffffff80;
+    background-size: cover;
+    position: relative;
+    flex-direction: column;
+    justify-content: end;
+    padding: .5rem
+}
+
+.item .durability {
+	transition: .3s cubic-bezier(.215, .61, .355, 1);
+    width: 100%;
+    height: .4rem;
+    -webkit-mask-box-image: url(https://cdn.humblegg.com/host-page/custom-fivem/duration-inventory.png);
+	margin-top: 63px;
+}
+
+.invMiddle {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+input {
+	text-align: center;
+}
+
+input::placeholder {
+	color: rgb(172, 172, 172,0.8);
+}
+
+.invMiddle div, .invMiddle input {
+	border: 0;
+	width: 70%;
+	outline: none;
+	color: rgb(146, 146, 146);
+	font-size: 14px;
+	font-weight: bold;
+	padding: 16px 0;
+	text-align: center;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	letter-spacing: 1px;
+	background-color: rgba(54, 54, 54, 0.9) !important;
+	border: 2px solid rgba(172, 172, 172, 0.26);
+}
+
+#weight {
+	position: relative;
+	max-width: 1338px;
+	height: 3em;
+	margin-bottom: 8px;
+	overflow: visible;
+}
+
+#weightTextLeft {
+	float: left;
+	color: #ccc;
+	font-size: 12px;
+	min-width: 580px;
+	max-width: 580px;
+	text-align: right;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+}
+
+#weightBarLeft {
+	float: left;
+	min-height: 10px;
+	max-height: 10px;
+	min-width: 596px;
+	max-width: 596px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+#weightTextRight {
+	float: right;
+	color: #9c9c9c;
+	font-size: 12px;
+	min-width: 580px;
+	max-width: 580px;
+	text-align: left;
+	margin-left: 15px;
+	margin-bottom: 15px;
+	letter-spacing: 1px;
+}
+
+#weightBarRight {
+	float: right;
+	min-height: 10px;
+	max-height: 10px;
+	min-width: 596px;
+	max-width: 596px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+#weightContent {
+	float: left;
+	min-height: 6px;
+	max-height: 6px;
+	max-width: 18.3rem;
+	border-radius: 4px;
+	background: #f50a46;
+	box-shadow: 0 0 5px #f50a46, 0 0 10px #f50a46, 0 0 15px #f50a46, 0 0 20px #f50a46;
+	transition: all 0.9s;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.ui-tooltip {
+	color: rgb(185, 185, 185);
+	z-index: 9999;
+	font-size: 11px;
+	max-width: 400px;
+	position: absolute;
+	letter-spacing: 1px;
+	padding: 20px 20px 15px;
+	border: 1px solid rgba(255, 255, 255, .25);
+    background: rgba(255, 255, 255, .15);
+}
+
+.ui-tooltip:hover {
+	display: none;
+}
+
+.ui-tooltip item {
+	float: left;
+	font-size: 18px;
+	min-width: 225px;
+	letter-spacing: 2px;
+}
+
+.ui-tooltip legenda {
+	float: left;
+	max-width: 250px;
+	min-width: 250px;
+	margin-top: 10px;
+	padding-top: 10px;
+	line-height: 20px;
+	letter-spacing: 2px;
+	border-top: 1px solid #ffffff;
+}
+
+.itemPrice {
+	color: #f6f4f4;
+	text-shadow: none;
+	background: #f50a46;
+	border-radius: 5px;
+	padding: 3px 6px 4px;
+	margin: 4px 4px 0 0;
+}
+
+.itemPrice::first-letter {
+	font-size: 10px;
+	padding-right: 2px;
+	vertical-align: 0px;
+}
+
+.ui-tooltip b {
+	font-weight: 300;
+}
+
+.ui-tooltip description {
+	float: left;
+	color: #00ff6e;
+	font-size: 10px;
+	margin-top: 5px;
+	max-width: 250px;
+	min-width: 250px;
+}
+
+.ui-tooltip description green, .ui-tooltip description b {
+	color: #b8f5d4;
+}
+
+.ui-tooltip s {
+	color: rgb(185, 185, 185);
+	padding: 0 5px;
+	text-decoration: none;
+}
+
+.ui-tooltip r {
+	color: rgb(240, 240, 240);
+}
